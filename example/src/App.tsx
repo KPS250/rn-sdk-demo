@@ -9,7 +9,7 @@ import * as React from 'react';
 } from 'react-native-rn-aggregator-sdk';
 */
 import 'react-native-gesture-handler';
-import { AppStack } from './AppStack';
+import { AppStack } from './navigation/AppStack';
 
 export default function App() {
   //const [result, setResult] = React.useState<number | undefined>();

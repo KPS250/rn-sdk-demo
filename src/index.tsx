@@ -45,6 +45,4 @@ export function num(): number {
   return 1;
 }
 
-export * from './screens/Home';
-export * from './screens/Login';
-export * from './SdkStack';
+export * from './navigation/SdkStack';

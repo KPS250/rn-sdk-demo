@@ -1,38 +1,23 @@
 import React from 'react';
 import { Pressable, Text, StyleSheet, View, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Colors } from './Colors';
+import { Colors } from '../constants/Colors';
 
-export const Home = (props: any) => {
+export const Profile = (props: any) => {
   const navigation = useNavigation();
   const { route } = props;
   console.log(route.params);
-  const mobileNumber = '8779519601';
-
-  const gotoSDK = () => {
-    navigation.navigate(
-      'sdklogin' as never,
-      { mobileNumber: mobileNumber } as never
-    );
-  };
-
-  const gotoProfile = () => {
-    navigation.navigate('profile' as never);
-  };
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={Colors.primary} />
       <View style={styles.header}>
-        <Text style={styles.title}>{`Parent App (User: ${mobileNumber})`}</Text>
-        <Text style={styles.desc}>App Homescreen</Text>
+        <Text style={styles.title}>Profile</Text>
+        <Text style={styles.desc}>Your financial 360 degree profile</Text>
       </View>
       <View style={styles.body}>
-        <Pressable onPress={gotoSDK} style={styles.button}>
-          <Text style={styles.btnText}>Open SDK Screen</Text>
-        </Pressable>
-        <Pressable onPress={gotoProfile} style={styles.profileButton}>
-          <Text style={styles.btnText}>Profile</Text>
+        <Pressable onPress={navigation.goBack} style={styles.button}>
+          <Text style={styles.btnText}>GoBack</Text>
         </Pressable>
       </View>
     </View>
@@ -68,15 +53,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 180,
-    marginBottom: 20,
-  },
-  profileButton: {
-    width: 200,
-    height: 60,
-    borderRadius: 8,
-    backgroundColor: Colors.secondary,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   btnText: {
     fontSize: 14,
