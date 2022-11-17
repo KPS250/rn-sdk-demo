@@ -5,11 +5,21 @@ import Home from '../pages/home';
 
 const Stack = createStackNavigator();
 
-export const SdkStack = () => {
+export const SdkStack = (props: any) => {
+  console.log('SDKSTACK-PROPS', props.route.params);
   return (
-    <Stack.Group>
-      <Stack.Screen name="sdklogin" component={Login} />
+    <Stack.Navigator
+      initialRouteName="sdklogin"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="sdklogin"
+        component={Login}
+        initialParams={props.route.params}
+      />
       <Stack.Screen name="sdkhome" component={Home} />
-    </Stack.Group>
+    </Stack.Navigator>
   );
 };

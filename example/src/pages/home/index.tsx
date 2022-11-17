@@ -13,7 +13,7 @@ export const Home = (props: any) => {
 
   const gotoSDK = () => {
     navigation.navigate(
-      'sdklogin' as never,
+      'sdk' as never,
       {
         mobileNumber: mobileNumber,
         theme: Theme, // Passing Theme Config

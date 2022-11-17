@@ -16,11 +16,9 @@ export const AppStack = () => {
           headerShown: false,
         }}
       >
-        <Stack.Group>
-          <Stack.Screen name="home" component={Home} />
-          <Stack.Screen name="profile" component={Profile} />
-        </Stack.Group>
-        {SdkStack()}
+        <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="profile" component={Profile} />
+        <Stack.Screen name="sdk" component={SdkStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );
