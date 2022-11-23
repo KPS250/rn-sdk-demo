@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, Pressable, ActivityIndicator } from 'react-native';
 import { Theme } from '../../../constants/Theme';
-import { Colors } from '../../../constants/Colors';
 import { styles as defaultStyle } from './styles';
 
 type PropTypes = {
@@ -31,10 +30,10 @@ const Button = (props: PropTypes) => {
     <Pressable
       style={[styles.container, style, disabled ? styles.disabled : {}]}
       onPress={!disabled ? () => onPress() : () => {}}
-      android_ripple={{ color: Colors.concrete }}
+      android_ripple={{ color: theme.colors.concrete }}
     >
       {!loading && <Text style={styles.label}>{label}</Text>}
-      {loading && <ActivityIndicator size="small" color={Colors.white} />}
+      {loading && <ActivityIndicator size="small" color={theme.colors.light} />}
     </Pressable>
   );
 };

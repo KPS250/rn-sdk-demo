@@ -1,11 +1,11 @@
-# react-native-rn-aggregator-sdk
+# react-native-sdk-demo
 
 React Native SDK integration with React Native application
 
 ## Installation
 
 ```sh
-npm install react-native-rn-aggregator-sdk
+npm install react-native-sdk-demo
 ```
 
 ## Install Dependencies
@@ -20,7 +20,7 @@ npm install react-native-rn-aggregator-sdk
 Add SdkStack in your Navigator
 
 ```js
-import { SdkStack } from 'react-native-rn-aggregator-sdk';
+import { SdkStack } from 'react-native-sdk-demo';
 
 export const AppStack = () => {
   return (
@@ -78,14 +78,14 @@ export const Theme = {
     success: '#2ecc71',
     failure: '#e74c3c',
     concrete: '#95a5a6',
-    white: '#FFFFFF',
-    black: '#000000',
+    light: '#FFFFFF',
+    dark: '#000000',
   },
   fonts: {
-    regular: {},
-    medium: {},
-    semiBold: {},
-    bold: {},
+    regular: 'Roboto-Regular',
+    medium: 'Roboto-Medium',
+    semiBold: 'Roboto-Bold',
+    bold: 'Roboto-Bold',
   },
   text: {
     small: { fontSize: 10 },

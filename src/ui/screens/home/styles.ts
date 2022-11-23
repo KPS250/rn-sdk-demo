@@ -12,7 +12,7 @@ export const styles = (theme?: any) =>
       paddingHorizontal: 16,
     },
     body: {
-      backgroundColor: theme.colors.white,
+      backgroundColor: theme.colors.light,
       borderTopLeftRadius: 18,
       borderTopRightRadius: 18,
       overflow: 'hidden',
@@ -22,16 +22,16 @@ export const styles = (theme?: any) =>
     },
     title: {
       fontSize: 18,
-      color: theme.colors.white,
+      color: theme.colors.light,
     },
     desc: {
       fontSize: 12,
-      color: theme.colors.white,
+      color: theme.colors.light,
       marginTop: 10,
     },
     message: {
       ...theme.text.large,
-      color: theme.colors.black,
+      color: theme.colors.dark,
       marginTop: 100,
     },
   });

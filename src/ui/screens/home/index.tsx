@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, SafeAreaView } from 'react-native';
 //import { useNavigation } from '@react-navigation/native';
 import { SdkContext } from '../../../provider/SdkProvider';
 import { styles as defaultStyle } from './styles';
@@ -13,16 +13,18 @@ const Home = (props: any) => {
 
   return (
     <View style={styles.container}>
-      <AppBar theme={theme} />
-      <View style={styles.header}>
-        <Text style={styles.title}>
-          Hi {userContext ? userContext.mobileNumber : ''}
-        </Text>
-        <Text style={styles.desc}>We are analyzing your information</Text>
-      </View>
-      <View style={styles.body}>
-        <Text style={styles.message}>Loading</Text>
-      </View>
+      <SafeAreaView>
+        <AppBar theme={theme} />
+        <View style={styles.header}>
+          <Text style={styles.title}>
+            Hi {userContext ? userContext.mobileNumber : ''}
+          </Text>
+          <Text style={styles.desc}>We are analyzing your information</Text>
+        </View>
+        <View style={styles.body}>
+          <Text style={styles.message}>Loading</Text>
+        </View>
+      </SafeAreaView>
     </View>
   );
 };

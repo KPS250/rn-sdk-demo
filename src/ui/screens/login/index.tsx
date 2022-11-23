@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Text, View, TextInput, StatusBar } from 'react-native';
+import { Text, View, TextInput, StatusBar, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { styles as defaultStyle } from './styles';
 import Button from '../../atoms/Button';
@@ -21,27 +21,32 @@ const Login = (props: any) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={theme.colors.primary} />
-      <AppBar theme={theme} />
-      <View style={styles.header}>
-        <Text style={styles.title}>Personal Finance Manager</Text>
-        <Text style={styles.desc}>Manage all your finances in one place</Text>
-      </View>
-      <View style={styles.body}>
-        <TextInput
-          style={styles.input}
-          onChangeText={setMobileNumber}
-          value={mobileNumber}
-          placeholder="Mobile Number"
-          keyboardType="numeric"
-        />
-        <Button
-          onPress={next}
-          label={'Login'}
-          theme={theme}
-          buttonType={'large'}
-        />
-      </View>
+      <StatusBar
+        backgroundColor={theme.colors.primary}
+        barStyle={theme.statusBarStyle}
+      />
+      <SafeAreaView>
+        <AppBar theme={theme} />
+        <View style={styles.header}>
+          <Text style={styles.title}>Personal Finance Manager</Text>
+          <Text style={styles.desc}>Manage all your finances in one place</Text>
+        </View>
+        <View style={styles.body}>
+          <TextInput
+            style={styles.input}
+            onChangeText={setMobileNumber}
+            value={mobileNumber}
+            placeholder="Mobile Number"
+            keyboardType="numeric"
+          />
+          <Button
+            onPress={next}
+            label={'Login'}
+            theme={theme}
+            buttonType={'large'}
+          />
+        </View>
+      </SafeAreaView>
     </View>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, Text, View, StatusBar } from 'react-native';
+import { Pressable, Text, View, StatusBar, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Theme } from '../../../constants/Theme';
 import { Colors } from '../../../constants/Colors';
@@ -27,19 +27,23 @@ export const Home = (props: any) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={Colors.primary} />
-      <View style={styles.header}>
-        <Text style={styles.title}>{`Parent App (User: ${mobileNumber})`}</Text>
-        <Text style={styles.desc}>App Homescreen</Text>
-      </View>
-      <View style={styles.body}>
-        <Pressable onPress={gotoSDK} style={styles.button}>
-          <Text style={styles.btnText}>Open SDK Screen</Text>
-        </Pressable>
-        <Pressable onPress={gotoProfile} style={styles.profileButton}>
-          <Text style={styles.btnText}>Profile</Text>
-        </Pressable>
-      </View>
+      <StatusBar backgroundColor={Colors.primary} barStyle={'light-content'} />
+      <SafeAreaView>
+        <View style={styles.header}>
+          <Text
+            style={styles.title}
+          >{`Parent App (User: ${mobileNumber})`}</Text>
+          <Text style={styles.desc}>App Homescreen</Text>
+        </View>
+        <View style={styles.body}>
+          <Pressable onPress={gotoSDK} style={styles.button}>
+            <Text style={styles.btnText}>Open SDK Screen</Text>
+          </Pressable>
+          <Pressable onPress={gotoProfile} style={styles.profileButton}>
+            <Text style={styles.btnText}>Profile</Text>
+          </Pressable>
+        </View>
+      </SafeAreaView>
     </View>
   );
 };

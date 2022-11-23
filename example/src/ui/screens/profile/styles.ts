@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   body: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.light,
     borderTopLeftRadius: 18,
     borderTopRightRadius: 18,
     overflow: 'hidden',
@@ -31,16 +31,16 @@ export const styles = StyleSheet.create({
   },
   btnText: {
     fontSize: 14,
-    color: Colors.white,
+    color: Colors.light,
     fontWeight: 'bold',
   },
   title: {
     fontSize: 18,
-    color: Colors.white,
+    color: Colors.light,
   },
   desc: {
     fontSize: 12,
-    color: Colors.white,
+    color: Colors.light,
     marginTop: 10,
   },
 });

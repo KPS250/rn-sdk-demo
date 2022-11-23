@@ -27,5 +27,6 @@ export const Theme = {
       borderRadius: 12,
       height: 60,
     },
+    statusBarStyle: 'dark-content',
   },
 };

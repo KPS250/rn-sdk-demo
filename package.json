@@ -1,6 +1,6 @@
 {
   "name": "react-native-rn-aggregator-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -41,13 +41,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/KPS250/react-native-rn-aggregator-sdk",
+  "repository": "https://github.com/KPS250/rn-sdk-demo",
   "author": "kps250 <kpshinde25@gmail.com> (https://github.com/KPS250)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KPS250/react-native-rn-aggregator-sdk/issues"
+    "url": "https://github.com/KPS250/rn-sdk-demo/issues"
   },
-  "homepage": "https://github.com/KPS250/react-native-rn-aggregator-sdk#readme",
+  "homepage": "https://github.com/KPS250/rn-sdk-demo#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

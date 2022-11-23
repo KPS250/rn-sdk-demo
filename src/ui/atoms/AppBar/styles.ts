@@ -16,10 +16,10 @@ export const styles = (theme: any) => {
       width: 24,
       height: 24,
       resizeMode: 'contain',
-      tintColor: theme.colors.white,
+      tintColor: theme.colors.light,
     },
     label: {
-      color: theme.colors.white,
+      color: theme.colors.light,
       textAlign: 'center',
       alignSelf: 'center',
       ...theme.text.large,

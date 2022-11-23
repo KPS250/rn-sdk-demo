@@ -28,5 +28,5 @@ export const Theme = {
       height: 60,
     },
   },
-  xyz: 'none',
+  statusBarStyle: 'light-content',
 };

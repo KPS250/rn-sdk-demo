@@ -5,6 +5,6 @@ export const Colors = {
   success: '#2ecc71',
   failure: '#e74c3c',
   concrete: '#95a5a6',
-  white: '#FFFFFF',
-  black: '#000000',
+  light: '#FFFFFF',
+  dark: '#000000',
 };
