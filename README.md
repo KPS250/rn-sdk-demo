@@ -54,8 +54,6 @@ const gotoSDK = () => {
 <Button onPress={gotoSDK} title="Open Sdk Screen" />;
 ```
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
 ## Passing Context (Optional)
 
 ```js
@@ -111,6 +109,8 @@ export const Theme = {
   },
 };
 ```
+
+See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 
