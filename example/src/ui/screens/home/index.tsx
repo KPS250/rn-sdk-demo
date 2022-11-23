@@ -1,8 +1,8 @@
 import React from 'react';
 import { Pressable, Text, View, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Theme } from '../../constants/Theme';
-import { Colors } from '../../constants/Colors';
+import { Theme } from '../../../constants/Theme';
+import { Colors } from '../../../constants/Colors';
 import { styles } from './styles';
 
 export const Home = (props: any) => {
@@ -15,7 +15,7 @@ export const Home = (props: any) => {
     navigation.navigate(
       'sdk' as never,
       {
-        mobileNumber: mobileNumber,
+        context: { mobileNumber: mobileNumber },
         theme: Theme, // Passing Theme Config
       } as never
     );

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Home } from '../pages/home';
-import { Profile } from '../pages/profile';
+import { Home } from '../ui/screens/home';
+import { Profile } from '../ui/screens/profile';
 import { SdkStack } from 'react-native-rn-aggregator-sdk';
 
 const Stack = createStackNavigator();

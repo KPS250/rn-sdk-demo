@@ -7,7 +7,7 @@ export const styles = (theme?: any) =>
       height: '100%',
     },
     header: {
-      height: 200,
+      height: 144,
       justifyContent: 'center',
       paddingHorizontal: 16,
     },
@@ -20,21 +20,6 @@ export const styles = (theme?: any) =>
       alignItems: 'center',
       paddingHorizontal: 16,
     },
-    button: {
-      width: 200,
-      height: 60,
-      borderRadius: 8,
-      backgroundColor: theme.colors.secondary,
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: 180,
-      marginBottom: 20,
-    },
-    btnText: {
-      fontSize: 14,
-      color: theme.colors.white,
-      fontWeight: 'bold',
-    },
     title: {
       fontSize: 18,
       color: theme.colors.white,
@@ -43,5 +28,10 @@ export const styles = (theme?: any) =>
       fontSize: 12,
       color: theme.colors.white,
       marginTop: 10,
+    },
+    message: {
+      ...theme.text.large,
+      color: theme.colors.black,
+      marginTop: 100,
     },
   });

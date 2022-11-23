@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, Text, View, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
-import { Colors } from '../../constants/Colors';
+import { Colors } from '../../../constants/Colors';
 
 export const Profile = (props: any) => {
   const navigation = useNavigation();
