@@ -13,7 +13,7 @@ npm install react-native-rn-aggregator-sdk
 1. React Navigation Installation
    React Navigation installation refer https://reactnavigation.org/docs/getting-started#installation
 
-Stack Navigator installation refer https://reactnavigation.org/docs/stack-navigator/
+2. Stack Navigator installation refer https://reactnavigation.org/docs/stack-navigator/
 
 ## Integration
 
