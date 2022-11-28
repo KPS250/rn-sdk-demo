@@ -67,4 +67,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  marginVertical: {
+    marginVertical: 20,
+  },
 });

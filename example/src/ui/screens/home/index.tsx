@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, Text, View, StatusBar, SafeAreaView } from 'react-native';
+import { Text, View, StatusBar, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Theme } from '../../../constants/Theme';
 import { Colors } from '../../../constants/Colors';
@@ -7,7 +7,11 @@ import { styles } from './styles';
 import { decrement, increment } from '../../../redux/slices/counterSlice';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 
-import { entriesApi, categoriesApi } from 'react-native-rn-aggregator-sdk';
+import {
+  entriesApi,
+  categoriesApi,
+  Button,
+} from 'react-native-rn-aggregator-sdk';
 
 export const Home = (props: any) => {
   const navigation = useNavigation();
@@ -53,31 +57,44 @@ export const Home = (props: any) => {
         </View>
 
         <View style={styles.body}>
-          <Pressable onPress={gotoSDK} style={styles.button}>
-            <Text style={styles.btnText}>Open SDK Screen</Text>
-          </Pressable>
-          <Pressable onPress={gotoProfile} style={styles.profileButton}>
-            <Text style={styles.btnText}>Profile</Text>
-          </Pressable>
+          <Button
+            onPress={gotoSDK}
+            label={'Open SDK Screen'}
+            theme={Theme}
+            buttonType={'large'}
+            style={styles.marginVertical}
+          />
+          <Button
+            onPress={callApi}
+            label={'Call Api'}
+            theme={Theme}
+            buttonType={'medium'}
+          />
+          <Button
+            onPress={gotoProfile}
+            label={'Profile'}
+            theme={Theme}
+            buttonType={'small'}
+            style={styles.marginVertical}
+          />
 
           <View style={styles.row}>
-            <Pressable
+            <Button
               onPress={() => dispatch(decrement())}
+              label={'-'}
+              theme={Theme}
+              buttonType={'small'}
               style={styles.smallBtn}
-            >
-              <Text style={styles.btnText}>-</Text>
-            </Pressable>
+            />
             <Text>{count}</Text>
-            <Pressable
+            <Button
               onPress={() => dispatch(increment())}
+              label={'+'}
+              theme={Theme}
+              buttonType={'small'}
               style={styles.smallBtn}
-            >
-              <Text style={styles.btnText}>+</Text>
-            </Pressable>
+            />
           </View>
-          <Pressable onPress={callApi} style={styles.smallBtn}>
-            <Text style={styles.btnText}>Call Api</Text>
-          </Pressable>
         </View>
       </SafeAreaView>
     </View>
