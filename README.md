@@ -15,6 +15,20 @@ npm install react-native-sdk-demo
 
 2. Stack Navigator installation refer https://reactnavigation.org/docs/stack-navigator/
 
+3. Redux (State Management) Installation
+
+```js
+yarn add @reduxjs/toolkit react-redux
+
+```
+
+4. Install axios for networking
+
+```js
+yarn add axios
+
+```
+
 ## Integration
 
 Add SdkStack in your Navigator

@@ -52,4 +52,19 @@ export const styles = StyleSheet.create({
     color: Colors.light,
     marginTop: 10,
   },
+  smallBtn: {
+    width: 40,
+    height: 40,
+    marginHorizontal: 10,
+    borderRadius: 5,
+    backgroundColor: Colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  row: {
+    flexDirection: 'row',
+    margin: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

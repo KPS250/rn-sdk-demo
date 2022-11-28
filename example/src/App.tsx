@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 /*import {
   multiply,
   callApi,
@@ -9,7 +8,9 @@ import * as React from 'react';
 } from 'react-native-rn-aggregator-sdk';
 */
 import 'react-native-gesture-handler';
+import { Provider } from 'react-redux';
 import { AppStack } from './navigation/AppStack';
+import store from './redux/Store';
 
 export default function App() {
   //const [result, setResult] = React.useState<number | undefined>();
@@ -38,5 +39,9 @@ export default function App() {
   );
   */
 
-  return <AppStack />;
+  return (
+    <Provider store={store}>
+      <AppStack />
+    </Provider>
+  );
 }

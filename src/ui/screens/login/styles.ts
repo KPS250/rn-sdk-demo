@@ -41,4 +41,15 @@ export const styles = (theme?: any) =>
       borderRadius: 16,
       marginTop: 80,
     },
+    smallBtn: {
+      width: 40,
+      height: 40,
+      marginHorizontal: 10,
+    },
+    row: {
+      flexDirection: 'row',
+      margin: 10,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
   });

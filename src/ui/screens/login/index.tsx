@@ -5,6 +5,8 @@ import { styles as defaultStyle } from './styles';
 import Button from '../../atoms/Button';
 import { SdkContext } from '../../../provider/SdkProvider';
 import AppBar from '../../atoms/AppBar';
+import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
+import { decrement, increment } from '../../../redux/slices/userSlice';
 
 const Login = (props: any) => {
   console.log(props);
@@ -14,6 +16,9 @@ const Login = (props: any) => {
 
   const navigation = useNavigation();
   const [mobileNumber, setMobileNumber] = useState(mobile);
+
+  const count = useAppSelector((state: any) => state.user.value);
+  const dispatch = useAppDispatch();
 
   const next = () => {
     navigation.navigate('sdkhome' as never);
@@ -45,6 +50,24 @@ const Login = (props: any) => {
             theme={theme}
             buttonType={'large'}
           />
+
+          <View style={styles.row}>
+            <Button
+              onPress={() => dispatch(decrement())}
+              label={'-'}
+              theme={theme}
+              buttonType={'large'}
+              style={styles.smallBtn}
+            />
+            <Text>{count}</Text>
+            <Button
+              onPress={() => dispatch(increment())}
+              label={'+'}
+              theme={theme}
+              buttonType={'large'}
+              style={styles.smallBtn}
+            />
+          </View>
         </View>
       </SafeAreaView>
     </View>
