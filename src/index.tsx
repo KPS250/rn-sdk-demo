@@ -1,5 +1,4 @@
 import { NativeModules, Platform } from 'react-native';
-const axios = require('axios').default;
 
 const LINKING_ERROR =
   `The package 'react-native-rn-aggregator-sdk' doesn't seem to be linked. Make sure: \n\n` +
@@ -35,14 +34,5 @@ export function multiply(a: number, b: number): Promise<number> {
   */
 }
 
-export function callApi() {
-  let url = 'https://api.publicapis.org/entries';
-  return axios.get(url);
-}
-
-export function num(): number {
-  //console.log("Input", data);
-  return 1;
-}
-
 export * from './navigation/SdkStack';
+export * from './api';

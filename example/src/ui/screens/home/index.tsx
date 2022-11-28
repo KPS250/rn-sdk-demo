@@ -7,6 +7,8 @@ import { styles } from './styles';
 import { decrement, increment } from '../../../redux/slices/counterSlice';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 
+import { entriesApi, categoriesApi } from 'react-native-rn-aggregator-sdk';
+
 export const Home = (props: any) => {
   const navigation = useNavigation();
   const { route } = props;
@@ -28,6 +30,15 @@ export const Home = (props: any) => {
 
   const gotoProfile = () => {
     navigation.navigate('profile' as never);
+  };
+
+  const callApi = () => {
+    entriesApi().then((data1: any) => {
+      console.log('API call1 from App', data1.data);
+      categoriesApi().then((data2: any) =>
+        console.log('API call2 from App', data2.data)
+      );
+    });
   };
 
   return (
@@ -64,6 +75,9 @@ export const Home = (props: any) => {
               <Text style={styles.btnText}>+</Text>
             </Pressable>
           </View>
+          <Pressable onPress={callApi} style={styles.smallBtn}>
+            <Text style={styles.btnText}>Call Api</Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </View>
