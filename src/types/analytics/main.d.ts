@@ -21,6 +21,6 @@ export interface AppType {
   code?: string;
   package?: string;
   platform?: Platform;
-  //platformVersion: string | number;
-  //constants: PlatformConstants;
+  platformVersion: string | number;
+  constants: PlatformConstants;
 }
