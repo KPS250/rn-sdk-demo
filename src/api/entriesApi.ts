@@ -1,6 +1,8 @@
+import { apiEvent } from '../analytics';
 import axiosInstance from './AxiosInstance';
+import { Urls } from '../constants/Urls';
 
 export const entriesApi = (): Promise<any> => {
-  let url = 'entries';
-  return axiosInstance.get(url);
+  apiEvent(Urls.entries);
+  return axiosInstance.get(Urls.entries);
 };

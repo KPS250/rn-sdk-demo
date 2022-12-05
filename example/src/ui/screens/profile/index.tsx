@@ -4,10 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
 import { Colors } from '../../../constants/Colors';
 
-export const Profile = (props: any) => {
+export const Profile = () => {
   const navigation = useNavigation();
-  const { route } = props;
-  console.log(route.params);
+  //console.log(route.params);
 
   return (
     <View style={styles.container}>

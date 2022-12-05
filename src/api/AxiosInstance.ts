@@ -1,11 +1,12 @@
 import axios from 'axios';
+import { Urls } from '../constants/Urls';
 //import Store from './Store';
 //import DeviceInfo from 'react-native-device-info';
 
 //const { dispatch } = Store;
 
 let axiosInstance = axios.create({
-  baseURL: 'https://api.publicapis.org/',
+  baseURL: Urls.baseUrl,
   timeout: 30000,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',

@@ -50,6 +50,26 @@ export const AppStack = () => {
 };
 ```
 
+## Initialize SDK
+
+Initialize SDK in your root file App.js or index.js
+
+```
+export default function App() {
+  useEffect(() => {
+    // Initialize SDK
+    initializeSDK();
+  }, []);
+
+  return (
+    <Provider store={store}>
+      <AppStack />
+    </Provider>
+  );
+}
+
+```
+
 ## Navigation
 
 ```js
@@ -122,6 +142,47 @@ export const Theme = {
     },
   },
 };
+```
+
+## Events Listener
+
+Listen to events for analytics from SDK. You can use this to push data to your own analytics tool.
+Add event listener in your root file App.js or index.js
+
+```
+const sdkEventListener = (event: any) => {
+  console.log('sdkEventListener', event);
+};
+
+useEffect(() => {
+    ...
+    // Initialize SDK
+    initializeSDK();
+    ...
+
+    // Adding Event Listener
+    DeviceEventEmitter.addListener('sdkEvents', sdkEventListener);
+}, []);
+
+```
+
+## Native Functions
+
+SDK exposes below native functions to JS via promises
+
+```
+import {
+  getAppName,
+  getAppVersion,
+  getAppVersionCode,
+  getAppPackageName,
+} from 'react-native-rn-aggregator-sdk';
+
+getAppName().then((name: string) => console.log('AppName', name)); // --> RnAggregatorSdkExample
+getAppVersion().then((name: string) => console.log('AppVersion', name)); // --> 1.0.0
+getAppVersionCode().then((name: string) => console.log('AppCode', name)); // --> 1
+getAppPackageName().then((name: string) => console.log('AppPackage', name)); // --> com.rnaggregatorsdkexample
+
 ```
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

@@ -7,9 +7,14 @@ import { SdkContext } from '../../../provider/SdkProvider';
 import AppBar from '../../atoms/AppBar';
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 import { decrement, increment } from '../../../redux/slices/userSlice';
+import { Screens } from '../../../navigation/Screens';
+import { useEffect } from 'react';
+import { screenEvent } from '../../../analytics';
+import { TestID } from '../../../constants/TestID';
+import { Strings } from '../../../constants/Strings';
 
-const Login = (props: any) => {
-  console.log(props);
+const Login = () => {
+  //console.log(props);
   const { theme, userContext } = useContext(SdkContext);
   const mobile = userContext ? userContext.mobileNumber : '';
   const styles = defaultStyle(theme);
@@ -21,8 +26,12 @@ const Login = (props: any) => {
   const dispatch = useAppDispatch();
 
   const next = () => {
-    navigation.navigate('sdkhome' as never);
+    navigation.navigate(Screens.HOME as never);
   };
+
+  useEffect(() => {
+    screenEvent(Screens.LOGIN);
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -41,14 +50,17 @@ const Login = (props: any) => {
             style={styles.input}
             onChangeText={setMobileNumber}
             value={mobileNumber}
-            placeholder="Mobile Number"
+            placeholder={Strings.mobileNumber}
             keyboardType="numeric"
+            testID={TestID.mobileNumber}
           />
           <Button
             onPress={next}
-            label={'Login'}
+            label={Strings.sendOtp}
             theme={theme}
             buttonType={'large'}
+            testID={TestID.sendOtp}
+            analyticsData={{ mobileNumber }}
           />
 
           <View style={styles.row}>
@@ -58,6 +70,8 @@ const Login = (props: any) => {
               theme={theme}
               buttonType={'large'}
               style={styles.smallBtn}
+              testID={TestID.decrease}
+              analyticsData={{ count }}
             />
             <Text>{count}</Text>
             <Button
@@ -66,6 +80,8 @@ const Login = (props: any) => {
               theme={theme}
               buttonType={'large'}
               style={styles.smallBtn}
+              testID={TestID.increase}
+              analyticsData={{ count }}
             />
           </View>
         </View>

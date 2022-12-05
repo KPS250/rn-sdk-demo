@@ -11,13 +11,15 @@ import {
   entriesApi,
   categoriesApi,
   Button,
+  getAppName,
+  getAppVersion,
+  getAppVersionCode,
+  getAppPackageName,
 } from 'react-native-rn-aggregator-sdk';
 
-export const Home = (props: any) => {
+export const Home = () => {
   const navigation = useNavigation();
-  const { route } = props;
-  console.log(route.params);
-  const mobileNumber = '8779519601';
+  const mobileNumber = '8779519610';
 
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
@@ -37,6 +39,11 @@ export const Home = (props: any) => {
   };
 
   const callApi = () => {
+    getAppName().then((name: string) => console.log('AppName', name));
+    getAppVersion().then((name: string) => console.log('AppVersion', name));
+    getAppVersionCode().then((name: string) => console.log('AppCode', name));
+    getAppPackageName().then((name: string) => console.log('AppPackage', name));
+
     entriesApi().then((data1: any) => {
       console.log('API call1 from App', data1.data);
       categoriesApi().then((data2: any) =>

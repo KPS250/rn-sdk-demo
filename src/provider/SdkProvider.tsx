@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import { deepMerge } from '../utils';
+import { deepMerge } from '../utils/helper';
 import { Theme } from '../constants/Theme';
 
 type SdkContextType = {
@@ -19,7 +19,7 @@ const defaultContext = {
 const SdkContext = createContext<SdkContextType>(defaultContext);
 
 const SdkProvider = ({ children, userContext, theme }: any) => {
-  console.log(theme ? deepMerge(Theme, theme) : 'Theme not passed');
+  //console.log(theme ? 'Theme Passed' : 'Theme not passed');
   return (
     <SdkContext.Provider
       value={

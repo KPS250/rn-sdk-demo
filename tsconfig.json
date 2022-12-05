@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-rn-aggregator-sdk": ["./src/index"]
+      "react-native-rn-aggregator-sdk": ["src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
