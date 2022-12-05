@@ -144,7 +144,7 @@ export const Theme = {
 };
 ```
 
-## Events Listener
+## Logs & Events Listener
 
 Listen to events for analytics from SDK. You can use this to push data to your own analytics tool.
 Add event listener in your root file App.js or index.js
@@ -165,6 +165,10 @@ useEffect(() => {
 }, []);
 
 ```
+
+Debug Logs from SDK
+
+<img src="https://github.com/KPS250/rn-sdk-demo/blob/main/screenshots/logs.png" width=100% >
 
 ## Native Functions
 
