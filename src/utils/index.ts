@@ -31,7 +31,7 @@ export const initializeSDK = async () => {
       appConfig.code = code;
       appConfig.package = packageName;
 
-      console.log('initializeSDK-KPS', appConfig);
+      console.log('initializeSDK', appConfig);
       store.dispatch(setConfig(appConfig));
       console.log('SDK Initialized Successfully');
       initializeSdkEvent(appConfig);

@@ -10,7 +10,7 @@ export * from './ui';
 // Exposing Native Functions
 export * from './bindings';
 
-// Exposing Utils Functions
+// Exposing Utils
 export * from './utils';
 
 // Exposing Analytics Events

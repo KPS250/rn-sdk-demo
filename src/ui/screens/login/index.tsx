@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { Text, View, TextInput, StatusBar, SafeAreaView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { styles as defaultStyle } from './styles';
 import Button from '../../atoms/Button';
 import { SdkContext } from '../../../provider/SdkProvider';
@@ -12,25 +11,30 @@ import { useEffect } from 'react';
 import { screenEvent } from '../../../analytics';
 import { TestID } from '../../../constants/TestID';
 import { Strings } from '../../../constants/Strings';
+import { withErrorBoundary } from '../../atoms/ErrorBoundary';
+import ErrorScreen from '../../templates/ErrorScreen';
 
 const Login = () => {
   //console.log(props);
+
   const { theme, userContext } = useContext(SdkContext);
   const mobile = userContext ? userContext.mobileNumber : '';
   const styles = defaultStyle(theme);
 
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
   const [mobileNumber, setMobileNumber] = useState(mobile);
 
   const count = useAppSelector((state: any) => state.user.value);
   const dispatch = useAppDispatch();
 
   const next = () => {
-    navigation.navigate(Screens.HOME as never);
+    //navigation.navigate(Screens.HOME as never);
+    throw new Error('This is a test error thrown by ComponentWithError.');
   };
 
   useEffect(() => {
     screenEvent(Screens.LOGIN);
+    //throw new Error('This is a test error thrown by ComponentWithError.');
   }, []);
 
   return (
@@ -39,12 +43,14 @@ const Login = () => {
         backgroundColor={theme.colors.primary}
         barStyle={theme.statusBarStyle}
       />
+
       <SafeAreaView>
         <AppBar theme={theme} />
         <View style={styles.header}>
           <Text style={styles.title}>Personal Finance Manager</Text>
           <Text style={styles.desc}>Manage all your finances in one place</Text>
         </View>
+
         <View style={styles.body}>
           <TextInput
             style={styles.input}
@@ -62,7 +68,6 @@ const Login = () => {
             testID={TestID.sendOtp}
             analyticsData={{ mobileNumber }}
           />
-
           <View style={styles.row}>
             <Button
               onPress={() => dispatch(decrement())}
@@ -90,4 +95,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withErrorBoundary(Login, ErrorScreen);
