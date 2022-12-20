@@ -79,7 +79,9 @@
     "react-native-safe-area-context": "^4.4.1",
     "react-native-screens": "^3.18.2",
     "@reduxjs/toolkit": "^1.9.0",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "@apollo/client": "^3.7.2",
+    "graphql": "^16.6.0"
   },
   "peerDependencies": {
     "react": "*",
@@ -91,7 +93,9 @@
     "@react-navigation/stack":"*",
     "react-native-gesture-handler":"*",
     "@reduxjs/toolkit":"*",
-    "react-redux":"*"
+    "react-redux":"*",
+    "graphql": "*",
+    "@apollo/client": "*"
   },
   "jest": {
     "preset": "react-native",

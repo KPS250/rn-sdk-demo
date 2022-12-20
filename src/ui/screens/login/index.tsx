@@ -13,6 +13,7 @@ import { TestID } from '../../../constants/TestID';
 import { Strings } from '../../../constants/Strings';
 import { withErrorBoundary } from '../../atoms/ErrorBoundary';
 import ErrorScreen from '../../templates/ErrorScreen';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
   //console.log(props);
@@ -21,15 +22,15 @@ const Login = () => {
   const mobile = userContext ? userContext.mobileNumber : '';
   const styles = defaultStyle(theme);
 
-  //const navigation = useNavigation();
+  const navigation = useNavigation();
   const [mobileNumber, setMobileNumber] = useState(mobile);
 
   const count = useAppSelector((state: any) => state.user.value);
   const dispatch = useAppDispatch();
 
   const next = () => {
-    //navigation.navigate(Screens.HOME as never);
-    throw new Error('This is a test error thrown by ComponentWithError.');
+    navigation.navigate(Screens.HOME as never);
+    //throw new Error('This is a test error thrown by ComponentWithError.');
   };
 
   useEffect(() => {
